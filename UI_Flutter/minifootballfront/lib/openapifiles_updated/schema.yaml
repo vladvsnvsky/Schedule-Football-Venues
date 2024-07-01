@@ -1,0 +1,2903 @@
+---
+openapi: 3.0.1
+info:
+  title: MinifootballAPI
+  version: v1
+paths:
+  "/api/Address/create-address":
+    post:
+      tags:
+      - Address
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/CreateAddressDTO"
+          text/json:
+            schema:
+              "$ref": "#/components/schemas/CreateAddressDTO"
+          application/*+json:
+            schema:
+              "$ref": "#/components/schemas/CreateAddressDTO"
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                "$ref": "#/components/schemas/AddressDTO"
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/AddressDTO"
+            text/json:
+              schema:
+                "$ref": "#/components/schemas/AddressDTO"
+  "/api/Address/get-all":
+    get:
+      tags:
+      - Address
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/AddressDTO"
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/AddressDTO"
+            text/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/AddressDTO"
+  "/api/Address/get":
+    get:
+      tags:
+      - Address
+      parameters:
+      - name: id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                "$ref": "#/components/schemas/AddressDTO"
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/AddressDTO"
+            text/json:
+              schema:
+                "$ref": "#/components/schemas/AddressDTO"
+  "/api/Address/by-user-id":
+    get:
+      tags:
+      - Address
+      parameters:
+      - name: id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                "$ref": "#/components/schemas/AddressDTO"
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/AddressDTO"
+            text/json:
+              schema:
+                "$ref": "#/components/schemas/AddressDTO"
+  "/api/Address/by-venue-id":
+    get:
+      tags:
+      - Address
+      parameters:
+      - name: id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                "$ref": "#/components/schemas/AddressDTO"
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/AddressDTO"
+            text/json:
+              schema:
+                "$ref": "#/components/schemas/AddressDTO"
+  "/api/Address/update":
+    put:
+      tags:
+      - Address
+      parameters:
+      - name: id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/CreateAddressDTO"
+          text/json:
+            schema:
+              "$ref": "#/components/schemas/CreateAddressDTO"
+          application/*+json:
+            schema:
+              "$ref": "#/components/schemas/CreateAddressDTO"
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                "$ref": "#/components/schemas/AddressDTO"
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/AddressDTO"
+            text/json:
+              schema:
+                "$ref": "#/components/schemas/AddressDTO"
+  "/api/Address/delete":
+    delete:
+      tags:
+      - Address
+      parameters:
+      - name: id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+  "/api/Auth/sign-up":
+    post:
+      tags:
+      - Auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/CreateUserEntityDTO"
+          text/json:
+            schema:
+              "$ref": "#/components/schemas/CreateUserEntityDTO"
+          application/*+json:
+            schema:
+              "$ref": "#/components/schemas/CreateUserEntityDTO"
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                "$ref": "#/components/schemas/CreateUserEntityDTO"
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/CreateUserEntityDTO"
+            text/json:
+              schema:
+                "$ref": "#/components/schemas/CreateUserEntityDTO"
+  "/api/Auth/admin-sign-in":
+    post:
+      tags:
+      - Auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/UserSignIn"
+          text/json:
+            schema:
+              "$ref": "#/components/schemas/UserSignIn"
+          application/*+json:
+            schema:
+              "$ref": "#/components/schemas/UserSignIn"
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  "/api/Auth/sign-in":
+    post:
+      tags:
+      - Auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/UserSignIn"
+          text/json:
+            schema:
+              "$ref": "#/components/schemas/UserSignIn"
+          application/*+json:
+            schema:
+              "$ref": "#/components/schemas/UserSignIn"
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+  "/api/Auth/set-admin":
+    post:
+      tags:
+      - Auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: integer
+              format: int32
+          text/json:
+            schema:
+              type: integer
+              format: int32
+          application/*+json:
+            schema:
+              type: integer
+              format: int32
+      responses:
+        '200':
+          description: Success
+  "/api/Auth/create-field-manager":
+    post:
+      tags:
+      - Auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: integer
+              format: int32
+          text/json:
+            schema:
+              type: integer
+              format: int32
+          application/*+json:
+            schema:
+              type: integer
+              format: int32
+      responses:
+        '200':
+          description: Success
+  "/api/Auth/check-by-email":
+    post:
+      tags:
+      - Auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/EmailRequestDio"
+          text/json:
+            schema:
+              "$ref": "#/components/schemas/EmailRequestDio"
+          application/*+json:
+            schema:
+              "$ref": "#/components/schemas/EmailRequestDio"
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: boolean
+            application/json:
+              schema:
+                type: boolean
+            text/json:
+              schema:
+                type: boolean
+  "/api/City/create":
+    post:
+      tags:
+      - City
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/CreateCityDTO"
+          text/json:
+            schema:
+              "$ref": "#/components/schemas/CreateCityDTO"
+          application/*+json:
+            schema:
+              "$ref": "#/components/schemas/CreateCityDTO"
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                "$ref": "#/components/schemas/CityDTO"
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/CityDTO"
+            text/json:
+              schema:
+                "$ref": "#/components/schemas/CityDTO"
+  "/api/City":
+    get:
+      tags:
+      - City
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/CityDTO"
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/CityDTO"
+            text/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/CityDTO"
+  "/api/City/get-by-id":
+    get:
+      tags:
+      - City
+      parameters:
+      - name: id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                "$ref": "#/components/schemas/CityDTO"
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/CityDTO"
+            text/json:
+              schema:
+                "$ref": "#/components/schemas/CityDTO"
+  "/api/City/update":
+    put:
+      tags:
+      - City
+      parameters:
+      - name: id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/CreateCityDTO"
+          text/json:
+            schema:
+              "$ref": "#/components/schemas/CreateCityDTO"
+          application/*+json:
+            schema:
+              "$ref": "#/components/schemas/CreateCityDTO"
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                "$ref": "#/components/schemas/CityDTO"
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/CityDTO"
+            text/json:
+              schema:
+                "$ref": "#/components/schemas/CityDTO"
+  "/api/City/delete":
+    delete:
+      tags:
+      - City
+      parameters:
+      - name: id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+  "/api/Country/create":
+    post:
+      tags:
+      - Country
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/CreateCountryDTO"
+          text/json:
+            schema:
+              "$ref": "#/components/schemas/CreateCountryDTO"
+          application/*+json:
+            schema:
+              "$ref": "#/components/schemas/CreateCountryDTO"
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                "$ref": "#/components/schemas/CountryDTO"
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/CountryDTO"
+            text/json:
+              schema:
+                "$ref": "#/components/schemas/CountryDTO"
+  "/api/Country/get/{id}":
+    get:
+      tags:
+      - Country
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                "$ref": "#/components/schemas/CountryDTO"
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/CountryDTO"
+            text/json:
+              schema:
+                "$ref": "#/components/schemas/CountryDTO"
+  "/api/Country":
+    get:
+      tags:
+      - Country
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/CountryDTO"
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/CountryDTO"
+            text/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/CountryDTO"
+  "/api/Country/update/{id}":
+    put:
+      tags:
+      - Country
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/CreateCountryDTO"
+          text/json:
+            schema:
+              "$ref": "#/components/schemas/CreateCountryDTO"
+          application/*+json:
+            schema:
+              "$ref": "#/components/schemas/CreateCountryDTO"
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                "$ref": "#/components/schemas/CountryDTO"
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/CountryDTO"
+            text/json:
+              schema:
+                "$ref": "#/components/schemas/CountryDTO"
+  "/api/Country/delete/{id}":
+    delete:
+      tags:
+      - Country
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+  "/api/Field/create":
+    post:
+      tags:
+      - Field
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/CreateFieldDTO"
+          text/json:
+            schema:
+              "$ref": "#/components/schemas/CreateFieldDTO"
+          application/*+json:
+            schema:
+              "$ref": "#/components/schemas/CreateFieldDTO"
+      responses:
+        '200':
+          description: Success
+  "/api/Field/get/{id}":
+    get:
+      tags:
+      - Field
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                "$ref": "#/components/schemas/FieldDTO"
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/FieldDTO"
+            text/json:
+              schema:
+                "$ref": "#/components/schemas/FieldDTO"
+  "/api/Field/venue-details-byid":
+    get:
+      tags:
+      - Field
+      parameters:
+      - name: id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                "$ref": "#/components/schemas/VenueDetailsDTO"
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/VenueDetailsDTO"
+            text/json:
+              schema:
+                "$ref": "#/components/schemas/VenueDetailsDTO"
+  "/api/Field/get-by-city/{id}":
+    get:
+      tags:
+      - Field
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/FieldDTO"
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/FieldDTO"
+            text/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/FieldDTO"
+  "/api/Field/get-by-city-paginated":
+    get:
+      tags:
+      - Field
+      parameters:
+      - name: cityId
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: pageNumber
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: pageSize
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                "$ref": "#/components/schemas/VenueDetailsDTOPaginatedResponse"
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/VenueDetailsDTOPaginatedResponse"
+            text/json:
+              schema:
+                "$ref": "#/components/schemas/VenueDetailsDTOPaginatedResponse"
+  "/api/Field/venue-details":
+    get:
+      tags:
+      - Field
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/VenueDetailsDTO"
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/VenueDetailsDTO"
+            text/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/VenueDetailsDTO"
+  "/api/Field/venue-details-by-city-id":
+    get:
+      tags:
+      - Field
+      parameters:
+      - name: id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/VenueDetailsDTO"
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/VenueDetailsDTO"
+            text/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/VenueDetailsDTO"
+  "/api/Field/update-by-id":
+    put:
+      tags:
+      - Field
+      parameters:
+      - name: id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/VenueDetailsDTO"
+          text/json:
+            schema:
+              "$ref": "#/components/schemas/VenueDetailsDTO"
+          application/*+json:
+            schema:
+              "$ref": "#/components/schemas/VenueDetailsDTO"
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                "$ref": "#/components/schemas/FieldDTO"
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/FieldDTO"
+            text/json:
+              schema:
+                "$ref": "#/components/schemas/FieldDTO"
+  "/api/Field/delete/{id}":
+    delete:
+      tags:
+      - Field
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+  "/api/Field/available-hours":
+    get:
+      tags:
+      - Field
+      parameters:
+      - name: day
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: month
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: year
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: fieldId
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/TimeSpan"
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/TimeSpan"
+            text/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/TimeSpan"
+  "/api/Field/set-active":
+    put:
+      tags:
+      - Field
+      parameters:
+      - name: fieldId
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                "$ref": "#/components/schemas/FieldDTOUpdateRequestResponse"
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/FieldDTOUpdateRequestResponse"
+            text/json:
+              schema:
+                "$ref": "#/components/schemas/FieldDTOUpdateRequestResponse"
+  "/api/Field/set-inactive":
+    put:
+      tags:
+      - Field
+      parameters:
+      - name: fieldId
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                "$ref": "#/components/schemas/FieldDTOUpdateRequestResponse"
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/FieldDTOUpdateRequestResponse"
+            text/json:
+              schema:
+                "$ref": "#/components/schemas/FieldDTOUpdateRequestResponse"
+  "/Match":
+    post:
+      tags:
+      - Match
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/CreateMatchDTO"
+          text/json:
+            schema:
+              "$ref": "#/components/schemas/CreateMatchDTO"
+          application/*+json:
+            schema:
+              "$ref": "#/components/schemas/CreateMatchDTO"
+      responses:
+        '200':
+          description: Success
+    get:
+      tags:
+      - Match
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                "$ref": "#/components/schemas/MatchDTO"
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/MatchDTO"
+            text/json:
+              schema:
+                "$ref": "#/components/schemas/MatchDTO"
+  "/Match/active":
+    get:
+      tags:
+      - Match
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/GameDetailsDTO"
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/GameDetailsDTO"
+            text/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/GameDetailsDTO"
+  "/Match/match-details-by-id":
+    get:
+      tags:
+      - Match
+      parameters:
+      - name: id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                "$ref": "#/components/schemas/GameDetailsDTO"
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/GameDetailsDTO"
+            text/json:
+              schema:
+                "$ref": "#/components/schemas/GameDetailsDTO"
+  "/Match/active-by-city":
+    get:
+      tags:
+      - Match
+      parameters:
+      - name: cityId
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/GameDetailsDTO"
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/GameDetailsDTO"
+            text/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/GameDetailsDTO"
+  "/Match/by-filters":
+    get:
+      tags:
+      - Match
+      parameters:
+      - name: OrganizerId
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: FieldId
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: CountryId
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: CityId
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: StartDateFrom
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: StartDateTo
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: EndDateFrom
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: EndDateTo
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: MinPlayersRequired
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: MaxPlayersRequired
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: PlayerCanJoin
+        in: query
+        schema:
+          type: boolean
+      - name: Finished
+        in: query
+        schema:
+          type: boolean
+      - name: Cancelled
+        in: query
+        schema:
+          type: boolean
+      - name: MinSpotsAvailable
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: MaxSpotsAvailable
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: pageNumber
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: pageSize
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                "$ref": "#/components/schemas/GameDetailsDTOPaginatedResponse"
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/GameDetailsDTOPaginatedResponse"
+            text/json:
+              schema:
+                "$ref": "#/components/schemas/GameDetailsDTOPaginatedResponse"
+  "/Match/active-by-city-paginated":
+    get:
+      tags:
+      - Match
+      parameters:
+      - name: cityId
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: pageNumber
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: pageSize
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                "$ref": "#/components/schemas/GameDetailsDTOPaginatedResponse"
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/GameDetailsDTOPaginatedResponse"
+            text/json:
+              schema:
+                "$ref": "#/components/schemas/GameDetailsDTOPaginatedResponse"
+  "/Match/active-by-field":
+    get:
+      tags:
+      - Match
+      parameters:
+      - name: fieldId
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/GameDetailsDTO"
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/GameDetailsDTO"
+            text/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/GameDetailsDTO"
+  "/Match/by-player":
+    get:
+      tags:
+      - Match
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/GameDetailsDTO"
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/GameDetailsDTO"
+            text/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/GameDetailsDTO"
+  "/Match/by-id":
+    get:
+      tags:
+      - Match
+      parameters:
+      - name: id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                "$ref": "#/components/schemas/MatchDTO"
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/MatchDTO"
+            text/json:
+              schema:
+                "$ref": "#/components/schemas/MatchDTO"
+  "/Match/update-by-id":
+    put:
+      tags:
+      - Match
+      parameters:
+      - name: id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/UpdateMatchDTO"
+          text/json:
+            schema:
+              "$ref": "#/components/schemas/UpdateMatchDTO"
+          application/*+json:
+            schema:
+              "$ref": "#/components/schemas/UpdateMatchDTO"
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                "$ref": "#/components/schemas/MatchDTO"
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/MatchDTO"
+            text/json:
+              schema:
+                "$ref": "#/components/schemas/MatchDTO"
+  "/Match/{id}":
+    delete:
+      tags:
+      - Match
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+  "/Match/join/{matchId}":
+    put:
+      tags:
+      - Match
+      parameters:
+      - name: matchId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+  "/Match/cancel":
+    put:
+      tags:
+      - Match
+      parameters:
+      - name: matchId
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: cancelationReason
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+  "/Match/leave":
+    put:
+      tags:
+      - Match
+      parameters:
+      - name: matchId
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+  "/Match/refresh-db-job":
+    get:
+      tags:
+      - Match
+      responses:
+        '200':
+          description: Success
+  "/Match/get-all-active-by-start-time-paginator":
+    get:
+      tags:
+      - Match
+      parameters:
+      - name: pageNumber
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: pageSize
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                "$ref": "#/components/schemas/GameDetailsDTOPaginatedResponse"
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/GameDetailsDTOPaginatedResponse"
+            text/json:
+              schema:
+                "$ref": "#/components/schemas/GameDetailsDTOPaginatedResponse"
+  "/Match/active-by-player":
+    get:
+      tags:
+      - Match
+      parameters:
+      - name: pageNumber
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: pageSize
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                "$ref": "#/components/schemas/GameDetailsDTOPaginatedResponse"
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/GameDetailsDTOPaginatedResponse"
+            text/json:
+              schema:
+                "$ref": "#/components/schemas/GameDetailsDTOPaginatedResponse"
+  "/Match/get-all-active-by-game-type-paginator":
+    get:
+      tags:
+      - Match
+      parameters:
+      - name: pageNumber
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: pageSize
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: nrOfPlayers
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                "$ref": "#/components/schemas/GameDetailsDTOPaginatedResponse"
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/GameDetailsDTOPaginatedResponse"
+            text/json:
+              schema:
+                "$ref": "#/components/schemas/GameDetailsDTOPaginatedResponse"
+  "/Match/get-all-joinable-by-start-time-paginator":
+    get:
+      tags:
+      - Match
+      parameters:
+      - name: pageNumber
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: pageSize
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                "$ref": "#/components/schemas/GameDetailsDTOPaginatedResponse"
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/GameDetailsDTOPaginatedResponse"
+            text/json:
+              schema:
+                "$ref": "#/components/schemas/GameDetailsDTOPaginatedResponse"
+  "/Match/get-all-joinable-by-game-type-paginator":
+    get:
+      tags:
+      - Match
+      parameters:
+      - name: pageNumber
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: pageSize
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: nrOfPlayers
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                "$ref": "#/components/schemas/GameDetailsDTOPaginatedResponse"
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/GameDetailsDTOPaginatedResponse"
+            text/json:
+              schema:
+                "$ref": "#/components/schemas/GameDetailsDTOPaginatedResponse"
+  "/Match/get-all-by-start-time-paginator":
+    get:
+      tags:
+      - Match
+      parameters:
+      - name: pageNumber
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: pageSize
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                "$ref": "#/components/schemas/GameDetailsDTOPaginatedResponse"
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/GameDetailsDTOPaginatedResponse"
+            text/json:
+              schema:
+                "$ref": "#/components/schemas/GameDetailsDTOPaginatedResponse"
+  "/Match/get-all-by-game-type-paginator":
+    get:
+      tags:
+      - Match
+      parameters:
+      - name: pageNumber
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: pageSize
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: nrOfPlayers
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                "$ref": "#/components/schemas/GameDetailsDTOPaginatedResponse"
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/GameDetailsDTOPaginatedResponse"
+            text/json:
+              schema:
+                "$ref": "#/components/schemas/GameDetailsDTOPaginatedResponse"
+  "/api/SignUp/create-player":
+    post:
+      tags:
+      - SignUp
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/CreateUserEntityDTO"
+          text/json:
+            schema:
+              "$ref": "#/components/schemas/CreateUserEntityDTO"
+          application/*+json:
+            schema:
+              "$ref": "#/components/schemas/CreateUserEntityDTO"
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                "$ref": "#/components/schemas/CreateUserEntityDTO"
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/CreateUserEntityDTO"
+            text/json:
+              schema:
+                "$ref": "#/components/schemas/CreateUserEntityDTO"
+  "/api/SignUp/create-player-from-list":
+    post:
+      tags:
+      - SignUp
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                "$ref": "#/components/schemas/CreateUserEntityDTO"
+          text/json:
+            schema:
+              type: array
+              items:
+                "$ref": "#/components/schemas/CreateUserEntityDTO"
+          application/*+json:
+            schema:
+              type: array
+              items:
+                "$ref": "#/components/schemas/CreateUserEntityDTO"
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/CreateUserEntityDTO"
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/CreateUserEntityDTO"
+            text/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/CreateUserEntityDTO"
+  "/api/User/all":
+    get:
+      tags:
+      - User
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/UserEntityDTO"
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/UserEntityDTO"
+            text/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/UserEntityDTO"
+  "/api/User/by-city-id":
+    get:
+      tags:
+      - User
+      parameters:
+      - name: cityId
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/UserEntityDTO"
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/UserEntityDTO"
+            text/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/UserEntityDTO"
+  "/api/User/search":
+    get:
+      tags:
+      - User
+      parameters:
+      - name: currentPage
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: pageSize
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: str
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                "$ref": "#/components/schemas/UserEntityDTOPaginatedResponse"
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/UserEntityDTOPaginatedResponse"
+            text/json:
+              schema:
+                "$ref": "#/components/schemas/UserEntityDTOPaginatedResponse"
+  "/api/User/user-by-id":
+    get:
+      tags:
+      - User
+      parameters:
+      - name: id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                "$ref": "#/components/schemas/UserEntityDTO"
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/UserEntityDTO"
+            text/json:
+              schema:
+                "$ref": "#/components/schemas/UserEntityDTO"
+  "/api/User/by-username":
+    get:
+      tags:
+      - User
+      parameters:
+      - name: username
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                "$ref": "#/components/schemas/UserEntityDTO"
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/UserEntityDTO"
+            text/json:
+              schema:
+                "$ref": "#/components/schemas/UserEntityDTO"
+  "/api/User/by-email":
+    get:
+      tags:
+      - User
+      parameters:
+      - name: email
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                "$ref": "#/components/schemas/UserEntityDTO"
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/UserEntityDTO"
+            text/json:
+              schema:
+                "$ref": "#/components/schemas/UserEntityDTO"
+  "/api/User/admins":
+    get:
+      tags:
+      - User
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/UserEntityDTO"
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/UserEntityDTO"
+            text/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/UserEntityDTO"
+  "/api/User/banned-users":
+    get:
+      tags:
+      - User
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/UserEntityDTO"
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/UserEntityDTO"
+            text/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/UserEntityDTO"
+  "/api/User/by-match":
+    get:
+      tags:
+      - User
+      parameters:
+      - name: matchId
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/UserEntityDTO"
+            application/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/UserEntityDTO"
+            text/json:
+              schema:
+                type: array
+                items:
+                  "$ref": "#/components/schemas/UserEntityDTO"
+  "/api/User/by-jwt":
+    get:
+      tags:
+      - User
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                "$ref": "#/components/schemas/UserEntityDTO"
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/UserEntityDTO"
+            text/json:
+              schema:
+                "$ref": "#/components/schemas/UserEntityDTO"
+  "/api/User/address-by-jwt":
+    get:
+      tags:
+      - User
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                "$ref": "#/components/schemas/AddressDTO"
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/AddressDTO"
+            text/json:
+              schema:
+                "$ref": "#/components/schemas/AddressDTO"
+  "/api/User/details-by-jwt":
+    get:
+      tags:
+      - User
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                "$ref": "#/components/schemas/UserDetailsDTO"
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/UserDetailsDTO"
+            text/json:
+              schema:
+                "$ref": "#/components/schemas/UserDetailsDTO"
+  "/api/User/by-details-id":
+    get:
+      tags:
+      - User
+      parameters:
+      - name: id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                "$ref": "#/components/schemas/UserDetailsDTO"
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/UserDetailsDTO"
+            text/json:
+              schema:
+                "$ref": "#/components/schemas/UserDetailsDTO"
+  "/api/User/update-user":
+    put:
+      tags:
+      - User
+      parameters:
+      - name: id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      requestBody:
+        content:
+          application/json:
+            schema:
+              "$ref": "#/components/schemas/UpdateUserEntityDTO"
+          text/json:
+            schema:
+              "$ref": "#/components/schemas/UpdateUserEntityDTO"
+          application/*+json:
+            schema:
+              "$ref": "#/components/schemas/UpdateUserEntityDTO"
+      responses:
+        '200':
+          description: Success
+  "/api/User/delete-user":
+    delete:
+      tags:
+      - User
+      parameters:
+      - name: id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+  "/api/User/ban-player":
+    put:
+      tags:
+      - User
+      parameters:
+      - name: id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+  "/api/User/unban-player":
+    put:
+      tags:
+      - User
+      parameters:
+      - name: id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+  "/api/User/set-admin":
+    put:
+      tags:
+      - User
+      parameters:
+      - name: id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+  "/api/User/remove-admin":
+    put:
+      tags:
+      - User
+      parameters:
+      - name: id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+  "/api/User/update-username":
+    put:
+      tags:
+      - User
+      parameters:
+      - name: username
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                "$ref": "#/components/schemas/UserEntityDTOUpdateRequestResponse"
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/UserEntityDTOUpdateRequestResponse"
+            text/json:
+              schema:
+                "$ref": "#/components/schemas/UserEntityDTOUpdateRequestResponse"
+  "/api/User/update-email":
+    put:
+      tags:
+      - User
+      parameters:
+      - name: email
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                "$ref": "#/components/schemas/UserEntityDTOUpdateRequestResponse"
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/UserEntityDTOUpdateRequestResponse"
+            text/json:
+              schema:
+                "$ref": "#/components/schemas/UserEntityDTOUpdateRequestResponse"
+  "/api/User/update-birthdate":
+    put:
+      tags:
+      - User
+      parameters:
+      - name: day
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: month
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: year
+        in: query
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                "$ref": "#/components/schemas/UserEntityDTOUpdateRequestResponse"
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/UserEntityDTOUpdateRequestResponse"
+            text/json:
+              schema:
+                "$ref": "#/components/schemas/UserEntityDTOUpdateRequestResponse"
+  "/api/User/update-password":
+    put:
+      tags:
+      - User
+      parameters:
+      - name: password
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                "$ref": "#/components/schemas/UserEntityDTOUpdateRequestResponse"
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/UserEntityDTOUpdateRequestResponse"
+            text/json:
+              schema:
+                "$ref": "#/components/schemas/UserEntityDTOUpdateRequestResponse"
+  "/api/User/update-address":
+    put:
+      tags:
+      - User
+      parameters:
+      - name: cityId
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: streetAndNo
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                "$ref": "#/components/schemas/UserEntityDTOUpdateRequestResponse"
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/UserEntityDTOUpdateRequestResponse"
+            text/json:
+              schema:
+                "$ref": "#/components/schemas/UserEntityDTOUpdateRequestResponse"
+  "/api/User/update-phone-number":
+    put:
+      tags:
+      - User
+      parameters:
+      - name: phoneNumber
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                "$ref": "#/components/schemas/UserEntityDTOUpdateRequestResponse"
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/UserEntityDTOUpdateRequestResponse"
+            text/json:
+              schema:
+                "$ref": "#/components/schemas/UserEntityDTOUpdateRequestResponse"
+  "/api/User/users-paginated":
+    get:
+      tags:
+      - User
+      parameters:
+      - name: currentPage
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: pageSize
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: Id
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: CountryId
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: CityId
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: IsBanned
+        in: query
+        schema:
+          type: boolean
+      - name: Name
+        in: query
+        schema:
+          type: string
+      - name: Email
+        in: query
+        schema:
+          type: string
+      - name: DayOfBirth
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: MonthOfBirth
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: YearOfBirth
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: IsAdmin
+        in: query
+        schema:
+          type: boolean
+      - name: OrderByAgeAsc
+        in: query
+        schema:
+          type: boolean
+      - name: OrderByCreationDateAsc
+        in: query
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                "$ref": "#/components/schemas/UserEntityDTOPaginatedResponse"
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/UserEntityDTOPaginatedResponse"
+            text/json:
+              schema:
+                "$ref": "#/components/schemas/UserEntityDTOPaginatedResponse"
+components:
+  schemas:
+    AddressDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        cityId:
+          type: integer
+          format: int32
+        cityName:
+          type: string
+          nullable: true
+        countryId:
+          type: integer
+          format: int32
+        countryName:
+          type: string
+          nullable: true
+        streetAndNo:
+          type: string
+          nullable: true
+        latitude:
+          type: number
+          format: double
+          nullable: true
+        longitude:
+          type: number
+          format: double
+          nullable: true
+      additionalProperties: false
+    CityDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        name:
+          type: string
+          nullable: true
+        countryId:
+          type: integer
+          format: int32
+      additionalProperties: false
+    CountryDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        name:
+          type: string
+          nullable: true
+      additionalProperties: false
+    CreateAddressDTO:
+      type: object
+      properties:
+        cityId:
+          type: integer
+          format: int32
+        streetAndNo:
+          type: string
+          nullable: true
+        latitude:
+          type: number
+          format: double
+          nullable: true
+        longitude:
+          type: number
+          format: double
+          nullable: true
+      additionalProperties: false
+    CreateCityDTO:
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+        countryId:
+          type: integer
+          format: int32
+      additionalProperties: false
+    CreateCountryDTO:
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+      additionalProperties: false
+    CreateFieldDTO:
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+        description:
+          type: string
+          nullable: true
+        capacity:
+          type: integer
+          format: int32
+          nullable: true
+        width:
+          type: number
+          format: float
+        length:
+          type: number
+          format: float
+        pricePerHourUnits:
+          type: integer
+          format: int32
+          nullable: true
+        phone:
+          type: string
+          nullable: true
+        email:
+          type: string
+          nullable: true
+        cityId:
+          type: integer
+          format: int32
+        streetAndNo:
+          type: string
+          nullable: true
+        googleMapsLatitude:
+          type: number
+          format: float
+          nullable: true
+        googleMapsLongitude:
+          type: number
+          format: float
+          nullable: true
+      additionalProperties: false
+    CreateMatchDTO:
+      type: object
+      properties:
+        fieldId:
+          type: integer
+          format: int32
+        organizerId:
+          type: integer
+          format: int32
+        startHour:
+          type: integer
+          format: int32
+        startDay:
+          type: integer
+          format: int32
+        startMonth:
+          type: integer
+          format: int32
+        startYear:
+          type: integer
+          format: int32
+        endHour:
+          type: integer
+          format: int32
+        endDay:
+          type: integer
+          format: int32
+        endMonth:
+          type: integer
+          format: int32
+        endYear:
+          type: integer
+          format: int32
+        nrOfPlayersRequired:
+          type: integer
+          format: int32
+        playerCanJoin:
+          type: boolean
+        cancelled:
+          type: boolean
+        cancelledReason:
+          type: string
+          nullable: true
+        pricePerPlayerUnits:
+          type: integer
+          format: int32
+      additionalProperties: false
+    CreateUserDetailsDTO:
+      type: object
+      properties:
+        phone:
+          type: string
+          nullable: true
+        birthDay:
+          type: integer
+          format: int32
+        birthMonth:
+          type: integer
+          format: int32
+        birthYear:
+          type: integer
+          format: int32
+      additionalProperties: false
+    CreateUserEntityDTO:
+      type: object
+      properties:
+        username:
+          type: string
+          nullable: true
+        email:
+          type: string
+          nullable: true
+        password:
+          type: string
+          nullable: true
+        address:
+          "$ref": "#/components/schemas/CreateAddressDTO"
+        userDetails:
+          "$ref": "#/components/schemas/CreateUserDetailsDTO"
+      additionalProperties: false
+    EmailRequestDio:
+      type: object
+      properties:
+        email:
+          type: string
+          nullable: true
+      additionalProperties: false
+    FieldDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        name:
+          type: string
+          nullable: true
+        description:
+          type: string
+          nullable: true
+        capacity:
+          type: integer
+          format: int32
+          nullable: true
+        width:
+          type: number
+          format: double
+        length:
+          type: number
+          format: double
+        phone:
+          type: string
+          nullable: true
+        email:
+          type: string
+          nullable: true
+        addressId:
+          type: integer
+          format: int32
+        pricePerHourUnits:
+          type: integer
+          format: int32
+          nullable: true
+        isActive:
+          type: boolean
+      additionalProperties: false
+    FieldDTOUpdateRequestResponse:
+      type: object
+      properties:
+        value:
+          "$ref": "#/components/schemas/FieldDTO"
+        message:
+          type: string
+          nullable: true
+        isOk:
+          type: boolean
+        jwt:
+          type: string
+          nullable: true
+      additionalProperties: false
+    GameDetailsDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        organizerName:
+          type: string
+          nullable: true
+        organizerId:
+          type: integer
+          format: int32
+        fieldId:
+          type: integer
+          format: int32
+        fieldName:
+          type: string
+          nullable: true
+        cityId:
+          type: integer
+          format: int32
+        cityName:
+          type: string
+          nullable: true
+        countryId:
+          type: integer
+          format: int32
+        countryName:
+          type: string
+          nullable: true
+        nrOfPlayersRequired:
+          type: integer
+          format: int32
+        currentNumberOfPlayers:
+          type: integer
+          format: int32
+        gameTypeName:
+          type: string
+          nullable: true
+        matchDurationInMinutes:
+          type: integer
+          format: int32
+        finished:
+          type: boolean
+        isCancelled:
+          type: boolean
+        cancellationReason:
+          type: string
+          nullable: true
+        pricePerPlayerUnits:
+          type: integer
+          format: int32
+          nullable: true
+        day:
+          type: integer
+          format: int32
+        month:
+          type: integer
+          format: int32
+        year:
+          type: integer
+          format: int32
+        startHour:
+          type: integer
+          format: int32
+        endHour:
+          type: integer
+          format: int32
+      additionalProperties: false
+    GameDetailsDTOPaginatedResponse:
+      type: object
+      properties:
+        currentPage:
+          type: integer
+          format: int64
+        totalPages:
+          type: integer
+          format: int64
+        items:
+          type: array
+          items:
+            "$ref": "#/components/schemas/GameDetailsDTO"
+          nullable: true
+      additionalProperties: false
+    MatchDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        fieldId:
+          type: integer
+          format: int32
+        organizerId:
+          type: integer
+          format: int32
+        startTime:
+          type: string
+          format: date-time
+        endTime:
+          type: string
+          format: date-time
+        nrOfPlayersRequired:
+          type: integer
+          format: int32
+        pricePerPlayerUnits:
+          type: integer
+          format: int32
+        playerCanJoin:
+          type: boolean
+        finished:
+          type: boolean
+        cancelled:
+          type: boolean
+        cancelledReason:
+          type: string
+          nullable: true
+        goalsTeam1:
+          type: integer
+          format: int32
+        goalsTeam2:
+          type: integer
+          format: int32
+      additionalProperties: false
+    TimeSpan:
+      type: object
+      properties:
+        ticks:
+          type: integer
+          format: int64
+        days:
+          type: integer
+          format: int32
+          readOnly: true
+        hours:
+          type: integer
+          format: int32
+          readOnly: true
+        milliseconds:
+          type: integer
+          format: int32
+          readOnly: true
+        microseconds:
+          type: integer
+          format: int32
+          readOnly: true
+        nanoseconds:
+          type: integer
+          format: int32
+          readOnly: true
+        minutes:
+          type: integer
+          format: int32
+          readOnly: true
+        seconds:
+          type: integer
+          format: int32
+          readOnly: true
+        totalDays:
+          type: number
+          format: double
+          readOnly: true
+        totalHours:
+          type: number
+          format: double
+          readOnly: true
+        totalMilliseconds:
+          type: number
+          format: double
+          readOnly: true
+        totalMicroseconds:
+          type: number
+          format: double
+          readOnly: true
+        totalNanoseconds:
+          type: number
+          format: double
+          readOnly: true
+        totalMinutes:
+          type: number
+          format: double
+          readOnly: true
+        totalSeconds:
+          type: number
+          format: double
+          readOnly: true
+      additionalProperties: false
+    UpdateAddressDTO:
+      type: object
+      properties:
+        cityId:
+          type: integer
+          format: int32
+        streetAndNo:
+          type: string
+          nullable: true
+        latitude:
+          type: number
+          format: double
+          nullable: true
+        longitude:
+          type: number
+          format: double
+          nullable: true
+      additionalProperties: false
+    UpdateMatchDTO:
+      type: object
+      properties:
+        fieldId:
+          type: integer
+          format: int32
+        organizerId:
+          type: integer
+          format: int32
+        startTime:
+          type: string
+          format: date-time
+        endTime:
+          type: string
+          format: date-time
+        nrOfPlayersRequired:
+          type: integer
+          format: int32
+        playerCanJoin:
+          type: boolean
+        finished:
+          type: boolean
+        cancelled:
+          type: boolean
+        cancelledReason:
+          type: string
+          nullable: true
+      additionalProperties: false
+    UpdateUserDetailsDTO:
+      type: object
+      properties:
+        phone:
+          type: string
+          nullable: true
+        birthDay:
+          type: integer
+          format: int32
+        birthMonth:
+          type: integer
+          format: int32
+        birthYear:
+          type: integer
+          format: int32
+      additionalProperties: false
+    UpdateUserEntityDTO:
+      type: object
+      properties:
+        username:
+          type: string
+          nullable: true
+        address:
+          "$ref": "#/components/schemas/UpdateAddressDTO"
+        userDetails:
+          "$ref": "#/components/schemas/UpdateUserDetailsDTO"
+      additionalProperties: false
+    UserDetailsDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        phone:
+          type: string
+          nullable: true
+        birthdate:
+          type: string
+          format: date
+      additionalProperties: false
+    UserEntityDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        username:
+          type: string
+          nullable: true
+        email:
+          type: string
+          nullable: true
+        token:
+          type: string
+          nullable: true
+        addressId:
+          type: integer
+          format: int32
+        userDetailsId:
+          type: integer
+          format: int32
+        isBanned:
+          type: boolean
+        createdAt:
+          type: string
+          format: date-time
+          nullable: true
+        budgetUnits:
+          type: integer
+          format: int32
+      additionalProperties: false
+    UserEntityDTOPaginatedResponse:
+      type: object
+      properties:
+        currentPage:
+          type: integer
+          format: int64
+        totalPages:
+          type: integer
+          format: int64
+        items:
+          type: array
+          items:
+            "$ref": "#/components/schemas/UserEntityDTO"
+          nullable: true
+      additionalProperties: false
+    UserEntityDTOUpdateRequestResponse:
+      type: object
+      properties:
+        value:
+          "$ref": "#/components/schemas/UserEntityDTO"
+        message:
+          type: string
+          nullable: true
+        isOk:
+          type: boolean
+        jwt:
+          type: string
+          nullable: true
+      additionalProperties: false
+    UserSignIn:
+      type: object
+      properties:
+        email:
+          type: string
+          nullable: true
+        password:
+          type: string
+          nullable: true
+      additionalProperties: false
+    VenueDetailsDTO:
+      type: object
+      properties:
+        venueId:
+          type: integer
+          format: int32
+        cityId:
+          type: integer
+          format: int32
+        countryId:
+          type: integer
+          format: int32
+        name:
+          type: string
+          nullable: true
+        email:
+          type: string
+          nullable: true
+        phone:
+          type: string
+          nullable: true
+        description:
+          type: string
+          nullable: true
+        streetAndNo:
+          type: string
+          nullable: true
+        cityName:
+          type: string
+          nullable: true
+        countryName:
+          type: string
+          nullable: true
+        width:
+          type: integer
+          format: int32
+          nullable: true
+        length:
+          type: integer
+          format: int32
+          nullable: true
+        capacity:
+          type: integer
+          format: int32
+          nullable: true
+        latitude:
+          type: number
+          format: double
+          nullable: true
+        longitude:
+          type: number
+          format: double
+          nullable: true
+        pricePerHourUnits:
+          type: integer
+          format: int32
+        isActive:
+          type: boolean
+          nullable: true
+      additionalProperties: false
+    VenueDetailsDTOPaginatedResponse:
+      type: object
+      properties:
+        currentPage:
+          type: integer
+          format: int64
+        totalPages:
+          type: integer
+          format: int64
+        items:
+          type: array
+          items:
+            "$ref": "#/components/schemas/VenueDetailsDTO"
+          nullable: true
+      additionalProperties: false
+  securitySchemes:
+    Bearer:
+      type: http
+      description: Please enter a valid token
+      scheme: Bearer
+      bearerFormat: Token
+security:
+- Bearer: []
